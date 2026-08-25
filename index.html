@@ -3,20 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Estudio Jurídico [Nombre] — Asesoría legal</title>
-<meta name="description" content="Estudio jurídico especializado en derecho civil, laboral, familia y comercial. Agenda tu consulta.">
+<title>RyN Abogados — Especialistas en Defensa Penal</title>
+<meta name="description" content="RyN Abogados, estudio jurídico especializado en defensa penal con más de 20 años de experiencia. Santiago Centro.">
 
 <!--
   ================================================================
-  CHECKLIST PARA DEJAR ESTO 100% LISTO (cuando tu amigo te pase el contenido real):
-  1. Reemplazar "[Nombre]" por el nombre real del estudio (buscar y reemplazar en todo el archivo).
-  2. Reemplazar el número de WhatsApp: variable WHATSAPP_NUMBER en el <script> al final.
-  3. Reemplazar correo y teléfono en la sección #contacto.
-  4. Reemplazar los textos de "Áreas de práctica" y "Quiénes somos" con el contenido real.
-  5. Si quieres que el formulario llegue a un correo real sin backend propio:
+  CHECKLIST — lo que aún falta para dejar esto 100% listo:
+  1. Número de WhatsApp real: variable WHATSAPP_NUMBER en el <script> al final.
+  2. Correo y teléfono reales en la sección #contacto (por ahora son placeholder).
+  3. Si quieres que el formulario llegue a un correo real sin backend propio:
      crear una cuenta gratis en https://formspree.io, y reemplazar
      "TU_FORM_ID" en el atributo action del <form> por el ID que te den.
-  6. Reemplazar el logo/inicial del navbar si tienen uno.
+  4. Logo del navbar, si el estudio tiene uno (por ahora es solo texto).
   ================================================================
 -->
 
@@ -125,6 +123,15 @@
     display:block;
     margin-bottom:.5rem;
   }
+  .servicio-card ul{
+    padding-left:1.1rem;
+    margin-bottom:0;
+    color:var(--text-muted);
+    font-size:.95rem;
+  }
+  .servicio-card ul li{
+    margin-bottom:.15rem;
+  }
 
   /* ---------- Nosotros ---------- */
   .nosotros{
@@ -199,14 +206,14 @@
 <!-- ================= NAVBAR ================= -->
 <nav class="navbar navbar-expand-lg navbar-legal sticky-top py-3">
   <div class="container">
-    <a class="navbar-brand" href="#inicio">Estudio [Nombre]</a>
+    <a class="navbar-brand" href="#inicio">RyN Abogados</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" style="border-color:rgba(255,255,255,.3)">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navMenu">
       <ul class="navbar-nav ms-auto align-items-lg-center">
         <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
-        <li class="nav-item"><a class="nav-link" href="#servicios">Áreas de práctica</a></li>
+        <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
         <li class="nav-item"><a class="nav-link" href="#nosotros">Quiénes somos</a></li>
         <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
         <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
@@ -220,16 +227,16 @@
 <!-- ================= HERO ================= -->
 <section id="inicio" class="hero">
   <div class="container">
-    <p class="eyebrow mb-3" style="color:var(--brass-light)">Asesoría jurídica</p>
-    <h1>Defendemos tus intereses con claridad y respaldo profesional.</h1>
+    <p class="eyebrow mb-3" style="color:var(--brass-light)">Defensa Penal</p>
+    <h1>Resguardamos tus derechos en cada etapa del proceso penal.</h1>
     <p class="lead mt-4">
-      <!-- TODO: reemplazar con la propuesta de valor real del estudio -->
-      Acompañamos a personas y empresas en sus procesos legales, con un enfoque
-      cercano y resultados concretos. Primera consulta sin costo.
+      Representación técnica, estratégica y de alta especialización, con más
+      de 20 años de experiencia en el área penal. Asesoría y representación
+      personalizada, oportuna en cualquier etapa del proceso.
     </p>
     <div class="mt-4 d-flex flex-wrap gap-3">
       <a href="#contacto" class="btn btn-brass btn-lg">Agendar una consulta</a>
-      <a href="#servicios" class="btn btn-outline-light btn-lg">Ver áreas de práctica</a>
+      <a href="#servicios" class="btn btn-outline-light btn-lg">Ver servicios</a>
     </div>
   </div>
 </section>
@@ -237,37 +244,41 @@
 <!-- ================= SERVICIOS ================= -->
 <section id="servicios" class="py-5 py-lg-6">
   <div class="container py-4">
-    <p class="eyebrow">Áreas de práctica</p>
-    <h2 class="mb-5">En qué podemos ayudarte</h2>
+    <p class="eyebrow">Servicios</p>
+    <h2 class="mb-5">Defensas y servicios jurídicos</h2>
 
     <div class="row g-4">
-      <!-- TODO: reemplazar estas 4 áreas por las reales que ofrezca el estudio -->
       <div class="col-md-6 col-lg-3">
         <div class="servicio-card">
           <span class="articulo">Art. 01</span>
-          <h3 class="h5">Derecho Civil</h3>
-          <p class="text-muted mb-0" style="color:var(--text-muted)">Contratos, arriendos, responsabilidad civil y más.</p>
+          <h3 class="h5">Control de detención</h3>
+          <p class="text-muted mb-0" style="color:var(--text-muted)">Representación desde el primer momento del proceso.</p>
         </div>
       </div>
       <div class="col-md-6 col-lg-3">
         <div class="servicio-card">
           <span class="articulo">Art. 02</span>
-          <h3 class="h5">Derecho Laboral</h3>
-          <p class="text-muted mb-0" style="color:var(--text-muted)">Despidos, finiquitos y defensa de derechos laborales.</p>
+          <h3 class="h5">Juicios orales y abreviados</h3>
+          <p class="text-muted mb-0" style="color:var(--text-muted)">Defensa técnica en cada etapa del juicio.</p>
         </div>
       </div>
       <div class="col-md-6 col-lg-3">
         <div class="servicio-card">
           <span class="articulo">Art. 03</span>
-          <h3 class="h5">Derecho de Familia</h3>
-          <p class="text-muted mb-0" style="color:var(--text-muted)">Divorcios, pensión de alimentos y régimen de visitas.</p>
+          <h3 class="h5">Traslados de cárcel</h3>
+          <p class="text-muted mb-0" style="color:var(--text-muted)">Gestión y solicitudes de traslado penitenciario.</p>
         </div>
       </div>
       <div class="col-md-6 col-lg-3">
         <div class="servicio-card">
           <span class="articulo">Art. 04</span>
-          <h3 class="h5">Derecho Comercial</h3>
-          <p class="text-muted mb-0" style="color:var(--text-muted)">Constitución de sociedades y asesoría a empresas.</p>
+          <h3 class="h5">Delitos de alta complejidad</h3>
+          <ul>
+            <li>Tráfico de drogas</li>
+            <li>Robos con intimidación</li>
+            <li>Homicidios</li>
+            <li>Receptaciones y otros delitos contra la propiedad</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -283,24 +294,21 @@
         <p class="eyebrow">Quiénes somos</p>
         <h2 class="mb-4">Experiencia real, trato cercano.</h2>
         <p style="color:var(--text-muted)">
-          <!-- TODO: reemplazar con la historia/trayectoria real del estudio -->
-          Somos un equipo de abogados con años de experiencia acompañando a
-          personas y empresas en sus procesos legales. Creemos en explicar
-          las cosas en un lenguaje simple y en estar disponibles cuando
-          nuestros clientes más lo necesitan.
+          Estudio jurídico con una vasta experiencia de más de 20 años en el
+          área penal (desde el año 2005). Brindamos representación técnica,
+          estratégica y de alta especialización para resguardar sus derechos
+          de manera oportuna en cualquier etapa del proceso.
         </p>
       </div>
       <div class="col-lg-6">
         <div class="row g-4">
           <div class="col-6">
-            <h3 class="display-font" style="color:var(--brass)">+10</h3>
+            <h3 class="display-font" style="color:var(--brass)">+20</h3>
             <p style="color:var(--text-muted)">Años de experiencia</p>
-            <!-- TODO: ajustar cifra real -->
           </div>
           <div class="col-6">
-            <h3 class="display-font" style="color:var(--brass)">+200</h3>
-            <p style="color:var(--text-muted)">Casos resueltos</p>
-            <!-- TODO: ajustar cifra real -->
+            <h3 class="display-font" style="color:var(--brass)">2005</h3>
+            <p style="color:var(--text-muted)">Año de fundación</p>
           </div>
         </div>
       </div>
@@ -316,11 +324,12 @@
         <p class="eyebrow" style="color:var(--brass-light)">Contacto</p>
         <h2 class="mb-4">Conversemos tu caso</h2>
         <p style="color:rgba(255,255,255,0.75)">
-          Escríbenos y te contactamos a la brevedad, o agenda directo por WhatsApp.
+          Asesoría y representación penal personalizada. Escríbenos y te
+          contactamos a la brevedad, o agenda directo por WhatsApp.
         </p>
         <div class="contacto-info mt-4">
-          <!-- TODO: reemplazar datos reales -->
-          <p class="mb-2">📍 [Dirección de la oficina]</p>
+          <p class="mb-2">📍 Pasaje Rosas Rodríguez 375, Oficina 302, Santiago Centro</p>
+          <!-- TODO: reemplazar correo y teléfono reales -->
           <p class="mb-2">✉️ <a href="mailto:contacto@estudio.cl">contacto@estudio.cl</a></p>
           <p class="mb-2">📞 <a href="tel:+56900000000">+56 9 0000 0000</a></p>
         </div>
@@ -354,7 +363,7 @@
 <!-- ================= FOOTER ================= -->
 <footer class="py-4">
   <div class="container text-center">
-    <p class="mb-0">© <span id="anio"></span> Estudio Jurídico [Nombre]. Todos los derechos reservados.</p>
+    <p class="mb-0">© <span id="anio"></span> RyN Abogados. Todos los derechos reservados.</p>
   </div>
 </footer>
 
