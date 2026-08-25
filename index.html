@@ -15,6 +15,15 @@
      crear una cuenta gratis en https://formspree.io, y reemplazar
      "TU_FORM_ID" en el atributo action del <form> por el ID que te den.
   4. Logo del navbar, si el estudio tiene uno (por ahora es solo texto).
+  5. IMÁGENES — este sitio espera 2 archivos dentro de una carpeta "img/"
+     al lado de este index.html:
+       - img/hero-oficina.jpg   (fondo del Hero, formato ancho/horizontal)
+       - img/equipo-oficina.jpg (foto en la sección Quiénes somos)
+     Sitios de fotos GRATIS y con licencia para uso comercial:
+       - https://unsplash.com   (buscar: "law office", "courthouse columns",
+         "lawyer meeting", "law library")
+       - https://www.pexels.com (mismas búsquedas)
+     Basta con descargar el .jpg y guardarlo con ese nombre exacto en img/.
   ================================================================
 -->
 
@@ -75,7 +84,10 @@
 
   /* ---------- Hero ---------- */
   .hero{
-    background:var(--ink);
+    background:
+      linear-gradient(180deg, rgba(23,35,59,0.90), rgba(23,35,59,0.96)),
+      url('img/patrick-fore-H5Lf0nGyetk-unsplash.jpg') center/cover no-repeat;
+    background-color:var(--ink); /* se ve así mientras no exista la imagen */
     color:var(--white);
     padding:6rem 0 5rem;
     position:relative;
@@ -142,6 +154,15 @@
     height:2px;
     background:var(--brass);
     margin-bottom:1.25rem;
+  }
+  .nosotros-foto{
+    width:100%;
+    height:100%;
+    min-height:280px;
+    object-fit:cover;
+    border:6px solid var(--white);
+    outline:1px solid rgba(23,35,59,0.1);
+    box-shadow:0 12px 30px rgba(23,35,59,0.15);
   }
 
   /* ---------- Contacto ---------- */
@@ -301,6 +322,7 @@
         </p>
       </div>
       <div class="col-lg-6">
+        <img src="img/vitaly-gariev-iPheGw7_UaI-unsplash.jpg" alt="Oficina de RyN Abogados" class="nosotros-foto rounded-1 mb-4">
         <div class="row g-4">
           <div class="col-6">
             <h3 class="display-font" style="color:var(--brass)">+20</h3>
