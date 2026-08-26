@@ -9,23 +9,25 @@
 <!--
   ================================================================
   CHECKLIST — lo que aún falta para dejar esto 100% listo:
-  1. Número de WhatsApp real: variable WHATSAPP_NUMBER en el <script> al final.
-  2. Correo y teléfono reales en la sección #contacto (por ahora son placeholder).
-  3. Si quieres que el formulario llegue a un correo real sin backend propio:
-     crear una cuenta gratis en https://formspree.io, y reemplazar
-     "TU_FORM_ID" en el atributo action del <form> por el ID que te den.
-  4. Logo del navbar, si el estudio tiene uno (por ahora es solo texto).
-  5. IMÁGENES — este sitio espera 2 archivos dentro de una carpeta "img/"
-     al lado de este index.html:
-       - img/hero-oficina.jpg   (fondo del Hero, formato ancho/horizontal)
-       - img/equipo-oficina.jpg (foto en la sección Quiénes somos)
-     Sitios de fotos GRATIS y con licencia para uso comercial:
-       - https://unsplash.com   (buscar: "law office", "courthouse columns",
-         "lawyer meeting", "law library")
-       - https://www.pexels.com (mismas búsquedas)
-     Basta con descargar el .jpg y guardarlo con ese nombre exacto en img/.
+  1. Formspree: crear cuenta gratis en https://formspree.io con el correo
+     Ryndefensajuridica@gmail.com, y reemplazar "TU_FORM_ID" en el atributo
+     action del <form> por el ID que te den. Sin esto, el formulario de
+     contacto no envía nada todavía (el botón de WhatsApp sí funciona ya).
+  2. IMÁGENES — este sitio espera estos archivos dentro de una carpeta "img/"
+     al lado de este index.html (ya te los dejo listos para descargar):
+       - img/logo.jpg          (logo real de RyN Abogados, ya recortado)
+       - img/favicon-32.png    (ícono de la pestaña del navegador)
+       - img/favicon-180.png   (ícono para dispositivos Apple)
+       - img/hero-oficina.jpg   (fondo del Hero, aún PENDIENTE)
+       - img/equipo-oficina.jpg (foto en Quiénes somos, aún PENDIENTE)
+     Sitios de fotos GRATIS y con licencia para uso comercial (para las
+     2 que faltan): https://unsplash.com o https://www.pexels.com
+     (buscar "law office", "courthouse columns", "lawyer meeting").
   ================================================================
 -->
+
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="img/favicon-180.png">
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -75,6 +77,21 @@
   }
   .navbar-legal .navbar-toggler-icon{
     background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,0.9)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  }
+  .brand-badge{
+    height:44px;
+    width:auto;
+    border-radius:6px;
+    padding:2px;
+    background:var(--paper);
+    border:1px solid rgba(201,164,92,0.5);
+  }
+  .footer-badge{
+    height:76px;
+    width:auto;
+    border-radius:8px;
+    padding:4px;
+    background:var(--paper);
   }
   .btn-brass{
     background:var(--brass);
@@ -233,7 +250,10 @@
 <!-- ================= NAVBAR ================= -->
 <nav class="navbar navbar-expand-lg navbar-legal sticky-top py-3">
   <div class="container">
-    <a class="navbar-brand" href="#inicio">RyN Abogados</a>
+    <a class="navbar-brand d-flex align-items-center gap-2" href="#inicio">
+      <img src="img/logo.jpg" alt="Escudo RyN Abogados" class="brand-badge">
+      <span>RyN Abogados</span>
+    </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -328,7 +348,7 @@
         </p>
       </div>
       <div class="col-lg-6">
-        <img src="img/gabrielle-henderson-HJckKnwCXxQ-unsplash.jpg" alt="Oficina de RyN Abogados" class="nosotros-foto rounded-1 mb-4">
+        <img src="img/equipo-oficina.jpg" alt="Oficina de RyN Abogados" class="nosotros-foto rounded-1 mb-4">
         <div class="row g-4">
           <div class="col-6">
             <h3 class="display-font" style="color:var(--brass)">+20</h3>
@@ -357,14 +377,14 @@
         </p>
         <div class="contacto-info mt-4">
           <p class="mb-2">📍 Pasaje Rosas Rodríguez 375, Oficina 302, Santiago Centro</p>
-          <!-- TODO: reemplazar correo y teléfono reales -->
-          <p class="mb-2">✉️ <a href="mailto:contacto@estudio.cl">contacto@estudio.cl</a></p>
-          <p class="mb-2">📞 <a href="tel:+56900000000">+56 9 0000 0000</a></p>
+          <p class="mb-2">✉️ <a href="mailto:Ryndefensajuridica@gmail.com">Ryndefensajuridica@gmail.com</a></p>
+          <p class="mb-2">📞 <a href="tel:+56950194045">+56 9 5019 4045</a></p>
+          <p class="mb-2">📞 <a href="tel:+56939323546">+56 9 3932 3546</a></p>
         </div>
       </div>
       <div class="col-lg-7">
         <!-- TODO: reemplazar TU_FORM_ID por el ID real de Formspree (ver checklist arriba) -->
-        <form action="https://formspree.io/f/TU_FORM_ID" method="POST">
+        <form id="contactoForm" action="https://formspree.io/f/TU_FORM_ID" method="POST">
           <div class="row g-3">
             <div class="col-md-6">
               <input type="text" name="nombre" class="form-control" placeholder="Nombre" required>
@@ -379,10 +399,19 @@
               <textarea name="mensaje" class="form-control" rows="4" placeholder="Cuéntanos brevemente tu caso" required></textarea>
             </div>
             <div class="col-12">
-              <button type="submit" class="btn btn-brass btn-lg">Enviar mensaje</button>
+              <button type="submit" class="btn btn-brass btn-lg" id="contactoBtn">Enviar mensaje</button>
             </div>
           </div>
         </form>
+        <!-- Mensaje automático que aparece apenas se envía el formulario -->
+        <div id="contactoGracias" class="d-none text-center py-4">
+          <h3 class="h4 mb-2" style="color:var(--brass-light)">¡Mensaje enviado!</h3>
+          <p style="color:rgba(255,255,255,0.8)">
+            Gracias por escribirnos. Recibimos tu consulta y te contactaremos
+            a la brevedad. Si tu caso es urgente, puedes escribirnos directo
+            por WhatsApp.
+          </p>
+        </div>
       </div>
     </div>
   </div>
@@ -391,6 +420,7 @@
 <!-- ================= FOOTER ================= -->
 <footer class="py-4">
   <div class="container text-center">
+    <img src="img/logo.jpg" alt="Escudo RyN Abogados" class="footer-badge mb-3">
     <p class="mb-0">© <span id="anio"></span> RyN Abogados. Todos los derechos reservados.</p>
   </div>
 </footer>
@@ -402,13 +432,43 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-  // TODO: reemplazar por el número real, formato internacional sin "+" ni espacios
-  const WHATSAPP_NUMBER = "56912345678";
+  const WHATSAPP_NUMBER = "56950194045";
   const WHATSAPP_MSG = encodeURIComponent("Hola, me gustaría agendar una consulta legal.");
   document.getElementById('whatsappBtn').href =
     `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MSG}`;
 
   document.getElementById('anio').textContent = new Date().getFullYear();
+
+  // Envía el formulario sin recargar la página y muestra un mensaje
+  // automático de "gracias" mientras un abogado revisa el caso real.
+  const form = document.getElementById('contactoForm');
+  const btn = document.getElementById('contactoBtn');
+  const gracias = document.getElementById('contactoGracias');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    btn.disabled = true;
+    btn.textContent = 'Enviando...';
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        form.classList.add('d-none');
+        gracias.classList.remove('d-none');
+      } else {
+        alert('No pudimos enviar tu mensaje. Intenta por WhatsApp o inténtalo de nuevo.');
+        btn.disabled = false;
+        btn.textContent = 'Enviar mensaje';
+      }
+    } catch (err) {
+      alert('No pudimos enviar tu mensaje. Intenta por WhatsApp o inténtalo de nuevo.');
+      btn.disabled = false;
+      btn.textContent = 'Enviar mensaje';
+    }
+  });
 </script>
 
 </body>
