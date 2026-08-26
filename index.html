@@ -9,30 +9,27 @@
 <!--
   ================================================================
   CHECKLIST — lo que aún falta para dejar esto 100% listo:
-  1. Formspree: crear cuenta gratis en https://formspree.io con el correo
-     Ryndefensajuridica@gmail.com, y reemplazar "TU_FORM_ID" en el atributo
-     action del <form> por el ID que te den. Sin esto, el formulario de
-     contacto no envía nada todavía (el botón de WhatsApp sí funciona ya).
-  2. IMÁGENES — este sitio espera estos archivos dentro de una carpeta "img/"
-     al lado de este index.html (ya te los dejo listos para descargar):
-       - img/logo.jpg          (logo real de RyN Abogados, ya recortado)
-       - img/favicon-32.png    (ícono de la pestaña del navegador)
-       - img/favicon-180.png   (ícono para dispositivos Apple)
-       - img/hero-oficina.jpg   (fondo del Hero, aún PENDIENTE)
-       - img/equipo-oficina.jpg (foto en Quiénes somos, aún PENDIENTE)
-     Sitios de fotos GRATIS y con licencia para uso comercial (para las
-     2 que faltan): https://unsplash.com o https://www.pexels.com
-     (buscar "law office", "courthouse columns", "lawyer meeting").
+  1. Número de WhatsApp real: variable WHATSAPP_NUMBER en el <script> al final.
+  2. Correo y teléfono reales en la sección #contacto (por ahora son placeholder).
+  3. Si quieres que el formulario llegue a un correo real sin backend propio:
+     crear una cuenta gratis en https://formspree.io, y reemplazar
+     "TU_FORM_ID" en el atributo action del <form> por el ID que te den.
+  4. Logo del navbar, si el estudio tiene uno (por ahora es solo texto).
+  5. IMÁGENES — este sitio espera 2 archivos dentro de una carpeta "img/"
+     al lado de este index.html:
+       - img/hero-oficina.jpg   (fondo del Hero, formato ancho/horizontal)
+       - img/equipo-oficina.jpg (foto en la sección Quiénes somos)
+     Sitios de fotos GRATIS y con licencia para uso comercial:
+       - https://unsplash.com   (buscar: "law office", "courthouse columns",
+         "lawyer meeting", "law library")
+       - https://www.pexels.com (mismas búsquedas)
+     Basta con descargar el .jpg y guardarlo con ese nombre exacto en img/.
   ================================================================
 -->
 
-<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
-<link rel="apple-touch-icon" sizes="180x180" href="img/favicon-180.png">
-
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
     --ink:#17233B;
@@ -50,7 +47,7 @@
   }
 
   h1, h2, h3, .display-font{
-    font-family:'Fraunces', serif;
+    font-family:'Playfair Display', serif;
   }
 
   /* ---------- Navbar ---------- */
@@ -59,7 +56,7 @@
     border-bottom:1px solid rgba(201,164,92,0.3);
   }
   .navbar-legal .navbar-brand{
-    font-family:'Fraunces', serif;
+    font-family:'Playfair Display', serif;
     font-weight:600;
     color:var(--white);
     letter-spacing:.02em;
@@ -81,18 +78,11 @@
   .brand-badge{
     height:44px;
     width:auto;
-    border-radius:6px;
-    padding:2px;
-    background:var(--paper);
-    border:1px solid rgba(201,164,92,0.5);
-  }
-  .footer-badge{
+}
+.footer-badge{
     height:76px;
     width:auto;
-    border-radius:8px;
-    padding:4px;
-    background:var(--paper);
-  }
+}
   .btn-brass{
     background:var(--brass);
     color:var(--white);
@@ -136,7 +126,7 @@
 
   /* ---------- Servicios ---------- */
   .eyebrow{
-    font-family:'Fraunces', serif;
+    font-family:'Playfair Display', serif;
     color:var(--brass);
     letter-spacing:.08em;
     font-size:.85rem;
@@ -150,7 +140,7 @@
     height:100%;
   }
   .servicio-card .articulo{
-    font-family:'Fraunces', serif;
+    font-family:'Playfair Display', serif;
     color:var(--brass);
     font-weight:600;
     font-size:.85rem;
@@ -251,9 +241,9 @@
 <nav class="navbar navbar-expand-lg navbar-legal sticky-top py-3">
   <div class="container">
     <a class="navbar-brand d-flex align-items-center gap-2" href="#inicio">
-      <img src="img/logo.jpg" alt="Escudo RyN Abogados" class="brand-badge">
-      <span>RyN Abogados</span>
-    </a>
+    <img src="img/logo.png" alt="Escudo RyN Abogados" class="brand-badge">
+    <span>RyN Abogados</span>
+</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -297,28 +287,28 @@
     <div class="row g-4">
       <div class="col-md-6 col-lg-3">
         <div class="servicio-card">
-          <span class="articulo">Art. 01</span>
+          <span class="articulo">Causa 1</span>
           <h3 class="h5">Control de detención</h3>
           <p class="text-muted mb-0" style="color:var(--text-muted)">Representación desde el primer momento del proceso.</p>
         </div>
       </div>
       <div class="col-md-6 col-lg-3">
         <div class="servicio-card">
-          <span class="articulo">Art. 02</span>
+          <span class="articulo">Causa 2</span>
           <h3 class="h5">Juicios orales y abreviados</h3>
           <p class="text-muted mb-0" style="color:var(--text-muted)">Defensa técnica en cada etapa del juicio.</p>
         </div>
       </div>
       <div class="col-md-6 col-lg-3">
         <div class="servicio-card">
-          <span class="articulo">Art. 03</span>
+          <span class="articulo">Causa 3</span>
           <h3 class="h5">Traslados de cárcel</h3>
           <p class="text-muted mb-0" style="color:var(--text-muted)">Gestión y solicitudes de traslado penitenciario.</p>
         </div>
       </div>
       <div class="col-md-6 col-lg-3">
         <div class="servicio-card">
-          <span class="articulo">Art. 04</span>
+          <span class="articulo">Causa 4</span>
           <h3 class="h5">Delitos de alta complejidad</h3>
           <ul>
             <li>Tráfico de drogas</li>
@@ -348,7 +338,7 @@
         </p>
       </div>
       <div class="col-lg-6">
-        <img src="img/equipo-oficina.jpg" alt="Oficina de RyN Abogados" class="nosotros-foto rounded-1 mb-4">
+        <img src="img/gabrielle-henderson-HJckKnwCXxQ-unsplash.jpg" alt="Oficina de RyN Abogados" class="nosotros-foto rounded-1 mb-4">
         <div class="row g-4">
           <div class="col-6">
             <h3 class="display-font" style="color:var(--brass)">+20</h3>
@@ -375,7 +365,7 @@
           Asesoría y representación penal personalizada. Escríbenos y te
           contactamos a la brevedad, o agenda directo por WhatsApp.
         </p>
-        <div class="contacto-info mt-4">
+              <div class="contacto-info mt-4">
           <p class="mb-2">📍 Pasaje Rosas Rodríguez 375, Oficina 302, Santiago Centro</p>
           <p class="mb-2">✉️ <a href="mailto:Ryndefensajuridica@gmail.com">Ryndefensajuridica@gmail.com</a></p>
           <p class="mb-2">📞 <a href="tel:+56950194045">+56 9 5019 4045</a></p>
@@ -383,7 +373,7 @@
         </div>
       </div>
       <div class="col-lg-7">
-        <!-- TODO: reemplazar TU_FORM_ID por el ID real de Formspree (ver checklist arriba) -->
+        <!-- TODO: reemplazar TU_FORM_ID por el ID real de Formspree -->
         <form id="contactoForm" action="https://formspree.io/f/TU_FORM_ID" method="POST">
           <div class="row g-3">
             <div class="col-md-6">
@@ -403,7 +393,6 @@
             </div>
           </div>
         </form>
-        <!-- Mensaje automático que aparece apenas se envía el formulario -->
         <div id="contactoGracias" class="d-none text-center py-4">
           <h3 class="h4 mb-2" style="color:var(--brass-light)">¡Mensaje enviado!</h3>
           <p style="color:rgba(255,255,255,0.8)">
@@ -420,7 +409,7 @@
 <!-- ================= FOOTER ================= -->
 <footer class="py-4">
   <div class="container text-center">
-    <img src="img/logo.jpg" alt="Escudo RyN Abogados" class="footer-badge mb-3">
+    <img src="img/logo.png" alt="Escudo RyN Abogados" class="footer-badge mb-3">
     <p class="mb-0">© <span id="anio"></span> RyN Abogados. Todos los derechos reservados.</p>
   </div>
 </footer>
@@ -439,8 +428,6 @@
 
   document.getElementById('anio').textContent = new Date().getFullYear();
 
-  // Envía el formulario sin recargar la página y muestra un mensaje
-  // automático de "gracias" mientras un abogado revisa el caso real.
   const form = document.getElementById('contactoForm');
   const btn = document.getElementById('contactoBtn');
   const gracias = document.getElementById('contactoGracias');
